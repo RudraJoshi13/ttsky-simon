@@ -62,7 +62,7 @@ async def encrypt(dut, plaintext, key):
     for i in range(RUN_CLOCKS):
         await Timer(1, unit="ns")
         assert dut.uio_oe.value.to_unsigned() == 0, "uio_oe must stay 0"
-        assert dut.uo_out.value.to_unsigned() >> 1 == 0, "uo_out[7:1] must stay 0"
+        assert dut.uo_out.value.to_unsigned() >> 2 == 0, "uo_out[7:2] must stay 0 (uo_out[1] is scan out)"
         if i >= RUN_CLOCKS - 128:  # ciphertext appears in the last 128 clocks
             ct |= (dut.uo_out.value.to_unsigned() & 1) << (i - (RUN_CLOCKS - 128))
         await FallingEdge(dut.clk)
