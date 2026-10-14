@@ -46,6 +46,15 @@ Test vector from the SIMON paper:
 |-----------|-----|------------|
 | `63736564207372656c6c657661727420` | `0f0e0d0c0b0a09080706050403020100` | `49681b1e1e54fe3f65aa832af84e0bbc` |
 
+## Clock
+
+Use a clock of 60 MHz or lower. Tiny Tapeout expects the highest usable clock to be about 66 MHz, set by the
+I/O pads ([tinytapeout.com/specs/clock](https://www.tinytapeout.com/specs/clock/)), so 60 MHz leaves a margin.
+
+The layout was checked by static timing analysis at 125 MHz (8 ns clock period). It met setup and hold timing
+at all nine process, voltage and temperature corners. The worst setup slack was 0.6967 ns and the worst hold
+slack was 0.0996 ns.
+
 ## External hardware
 
 None. The RP2040 on the Tiny Tapeout demo board can drive `ui[2:0]` and read `uo[0]`.
