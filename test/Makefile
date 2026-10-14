@@ -6,7 +6,7 @@ SIM ?= icarus
 FST ?= -fst # Use more efficient FST format
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
-PROJECT_SOURCES = project.v
+PROJECT_SOURCES = project.v Simon_bit_serial_top_module_FPGA.v Simon_bit_serial_key_expansion_FPGA.v Simon_bit_serial_datapath_FPGA.v
 
 ifneq ($(GATES),yes)
 
