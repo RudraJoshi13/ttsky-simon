@@ -18,6 +18,9 @@ Says: Break Area Records of Block Ciphers on FPGAs", IEEE Embedded Systems Lette
 unchanged. They process one bit per clock cycle, which keeps the design very small. The project's top module only
 connects the core's four ports to the Tiny Tapeout pins.
 
+The SIMON core files (`Simon_bit_serial_*.v`) are licensed under the LGPL, as listed on OpenCores
+(see `src/LICENSE.simon`). The rest of this repository is licensed under Apache-2.0.
+
 | Pin | Function |
 |-----|----------|
 | `ui[0]` | `data_in`: plaintext or key bit, one bit per clock, least significant bit first |
